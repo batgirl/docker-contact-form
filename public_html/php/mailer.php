@@ -32,8 +32,6 @@ try {
 	 * so we're using the $_POST superglobal.
 	 **/
 
-
-
 	$name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 	$email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL);
 	$subject = filter_input(INPUT_POST, "subject", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
@@ -44,9 +42,11 @@ try {
 
 	/**
 	 * Attach the sender to the message.
-	 * This takes the form of an associative array where $email is the key for the real name.
+	 * This takes the form of an associative array where $email is the key for the full sender info.
+	 * Using Gmail means we don't have access to setting the "from" email, so here we add it to the name.
 	 **/
-	$swiftMessage->setFrom([$email => $name]);
+	$sender = $name . ", " . $email;
+	$swiftMessage->setFrom([$email => $sender]);
 
 	/**
 	 * Attach the recipients to the message.
@@ -83,8 +83,12 @@ try {
 	 * because it's the most compatible and has the best error handling.
 	 *
 	 * @see http://swiftmailer.org/docs/sending.html Sending Messages - Documentation - SwitftMailer
+	 *
+	 * $smtpUser and $smtpSecret are set in mail-config.php
 	 **/
-	$smtp = new Swift_SmtpTransport("192.168.99.100", 25, "tls");
+	$smtp = (new Swift_SmtpTransport("smtp.gmail.com", 587, "tls"))
+		->setUsername($smtpUser)
+		->setPassword($smtpSecret);
 	$mailer = new Swift_Mailer($smtp);
 	$numSent = $mailer->send($swiftMessage, $failedRecipients);
 

@@ -10,7 +10,6 @@ RUN apt-get install -y php \
 	php-curl \
 	git \
 	curl lynx-common lynx \
-	sendmail \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& apt-get clean -y
 
@@ -23,3 +22,5 @@ CMD /usr/sbin/apache2ctl -D FOREGROUND
 WORKDIR /var/www/html
 
 RUN rm index.html && composer install
+
+EXPOSE 587
