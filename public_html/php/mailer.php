@@ -42,11 +42,9 @@ try {
 
 	/**
 	 * Attach the sender to the message.
-	 * This takes the form of an associative array where $email is the key for the full sender info.
-	 * Using Gmail means we don't have access to setting the "from" email, so here we add it to the name.
+	 * This takes the form of an associative array where $email is the key for the real name.
 	 **/
-	$sender = $name . ", " . $email;
-	$swiftMessage->setFrom([$email => $sender]);
+	$swiftMessage->setFrom([$email => $name]);
 
 	/**
 	 * Attach the recipients to the message.
@@ -86,7 +84,7 @@ try {
 	 *
 	 * $smtpUser and $smtpSecret are set in mail-config.php
 	 **/
-	$smtp = (new Swift_SmtpTransport("smtp.gmail.com", 587, "tls"))
+	$smtp = (new Swift_SmtpTransport("smtp.sendgrid.net", 587, "tls"))
 		->setUsername($smtpUser)
 		->setPassword($smtpSecret);
 	$mailer = new Swift_Mailer($smtp);
