@@ -41,5 +41,5 @@ Allocate & attach floating IP:\
 
 Go to the given IP to see your live, hosted app!!!!
 
-> **Note:** Make sure all your necessary IPs are configured to work from your Google Recaptcha admin settings.
+> **Note:** Make sure all your necessary IPs are configured to work from your Google Recaptcha admin settings.\
 > **Note:** This assumes you have Docker installed and running, have a DockerHub account, and have installed and configured Hyper CLI with your Hyper account keys.
