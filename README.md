@@ -23,3 +23,12 @@ Check for the running container:
 `docker container ls`
 
 Go to localhost:8080 to see your app!
+
+For Hyper hosting:
+https://hyper.sh/howto/deploying-a-docker-based-php-project-with-hyper.sh.html
+
+Push image to dockerhub using username
+
+Run hyper container from dockerhub image
+
+Allocate & attach floating IP
