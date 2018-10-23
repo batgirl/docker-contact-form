@@ -1,9 +1,9 @@
 # contact-form
-#### Docker/Hyper PWP Contact Form Demo
+### Docker/Hyper PWP Contact Form Demo
 
 ---
 
-Commands to run from directory with Dockerfile in it:
+#### Commands to run from directory with Dockerfile in it:
 
 ---
 
@@ -45,7 +45,7 @@ Go to localhost:8080 to see your app!
 
 ---
 
-[For Hyper hosting](https://hyper.sh/howto/deploying-a-docker-based-php-project-with-hyper.sh.html):
+#### [For Hyper hosting](https://hyper.sh/howto/deploying-a-docker-based-php-project-with-hyper.sh.html):
 
 ---
 
