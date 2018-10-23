@@ -1,26 +1,31 @@
 # contact-form
-PWP Contact form Demo
+#### Docker/Hyper PWP Contact Form Demo
+
+---
 
 Commands to run from directory with Dockerfile in it:
 
+---
 
-Build the image:
+Build the image with your DockerHub username:
 
-`docker image build -t contact-form .`
+`docker build . -t <YOUR_USERNAME>/contact-form`
 
-`-t contact-form` allows us to give the image our own name
+`-t` allows us to give the image our own name
 
 `.` refers to where you want to create the image from
 
+---
 
 Check for the image:
 
 `docker images`
 
+---
 
 Create a new container from the image:
 
-`docker container run --rm -p 8080:80 -d contact-form`
+`docker container run --rm -p 8080:80 -d <YOUR_USERNAME>/contact-form`
 
 `--rm` means to delete the container when it stops running (default is to be manually removed)
 
@@ -28,32 +33,50 @@ Create a new container from the image:
 
 `-d` means to run in detach mode, or in other words in the background of your terminal
 
+---
 
 Check for the running container:
 
 `docker container ls`
 
+---
 
 Go to localhost:8080 to see your app!
 
+---
 
 [For Hyper hosting](https://hyper.sh/howto/deploying-a-docker-based-php-project-with-hyper.sh.html):
 
+---
 
-Push image to dockerhub using username:
+Login to DockerHub:
 
-`docker build . -t <YOUR_USERNAME>/tiny-php-app`
+`docker login`
+
+---
+
+Push image to DockerHub:
 
 `docker push <YOUR_USERNAME>/tiny-php-app`
 
+---
 
 Run hyper container from dockerhub image:
 
 `hyper run -d -p 80:80 <YOUR_USERNAME>/tiny-php-app`
 
+---
 
 Allocate & attach floating IP:
 
 `hyper fip allocate 1`
 
 `hyper fip attach <YOUR_IP> <YOUR_CONTAINER_ID>`
+
+---
+
+Go to the given IP to see your live, hosted app!!!!
+
+---
+
+> **Note:** Make sure all your necessary IPs are configured to work from your Google Recaptcha admin settings.
