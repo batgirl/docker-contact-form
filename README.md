@@ -28,7 +28,12 @@ For Hyper hosting:
 https://hyper.sh/howto/deploying-a-docker-based-php-project-with-hyper.sh.html
 
 Push image to dockerhub using username
+`docker build . -t <YOUR_USERNAME>/tiny-php-app`
+`docker push <YOUR_USERNAME>/tiny-php-app`
 
 Run hyper container from dockerhub image
+`hyper run -d -p 80:80 <YOUR_USERNAME>/tiny-php-app`
 
 Allocate & attach floating IP
+`hyper fip allocate 1`
+`hyper fip attach <YOUR_IP> <YOUR_CONTAINER_ID>`
