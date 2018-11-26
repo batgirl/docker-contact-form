@@ -43,3 +43,28 @@ Go to the given IP to see your live, hosted app!!!!
 
 > **Note:** Make sure all your necessary IPs are configured to work from your Google Recaptcha admin settings.\
 > **Note:** This assumes you have Docker installed and running, have a DockerHub account, and have installed and configured Hyper CLI with your Hyper account keys.
+
+---
+
+### [For Certbot Domain SSL Certification](https://certbot.eff.org/lets-encrypt/ubuntubionic-apache)
+
+List your running Hyper containers:\
+`hyper ps`
+
+Go to the command line of your running Hyper container:\
+`hyper exec -it <YOUR_CONTAINER_NAME> bash`
+
+Run these commands in sequence to install Certbot, answering any questions with "Y" or Enter:\
+`apt-get update`\
+`apt-get install software-properties-common`\
+`add-apt-repository ppa:certbot/certbot`\
+`apt-get update`\
+`apt-get install python-certbot-apache`\
+`certbot --apache`
+
+Enter any email when prompted and then enter the domain name you will be using for your PWP.
+
+Exit the Hyper shell:\
+`exit`
+
+You should now have an SSL Certificate for your hosted, domained PWP!
