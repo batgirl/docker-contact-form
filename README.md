@@ -9,7 +9,7 @@ https://hub.docker.com/
 
 https://hyper.sh/
 
-For Mac: `hyper brew install`
+For Mac: `brew install hyper`
 
 #### Commands to run from directory with Dockerfile in it:
 
