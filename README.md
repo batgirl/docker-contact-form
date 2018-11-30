@@ -9,6 +9,8 @@ https://hub.docker.com/
 
 https://hyper.sh/
 
+For Mac: `hyper brew install`
+
 #### Commands to run from directory with Dockerfile in it:
 
 Build the image with your DockerHub username:\
@@ -28,7 +30,7 @@ Create a new container from the image:\
 Check for the running container:\
 `docker container ls`
 
-Go to localhost:8080 to see your app!
+Go to localhost:8080 in a browser to see your app!
 
 ---
 
@@ -38,10 +40,13 @@ Login to DockerHub:\
 `docker login`
 
 Push image to DockerHub:\
-`docker push <YOUR_USERNAME>/tiny-php-app`
+`docker push <YOUR_USERNAME>/contact-form`
+
+Set up your Hyper keys with your keys from your profile on the site:\
+`hyper config`
 
 Run Hyper container from DockerHub image:\
-`hyper run -d -p 80:80 <YOUR_USERNAME>/tiny-php-app`
+`hyper run -d -p 80:80 <YOUR_USERNAME>/contact-form`
 
 Allocate & attach floating IP:\
 `hyper fip allocate 1`\
@@ -49,7 +54,7 @@ Allocate & attach floating IP:\
 
 Go to the given IP to see your live, hosted app!!!!
 
-> **Note:** Make sure all your necessary IPs are configured to work from your Google Recaptcha admin settings.\
+> **Note:** Make sure all your necessary IPs and "localhost" are configured to work from your Google Recaptcha admin settings.\
 > **Note:** This assumes you have Docker installed and running, have a DockerHub account, and have installed and configured Hyper CLI with your Hyper account keys.
 
 ---
