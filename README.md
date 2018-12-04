@@ -1,20 +1,20 @@
 # contact-form
 ### Docker/Hyper PWP Contact Form Demo
 
-Install/Sign Up:
-
+Install:\
 https://www.docker.com/products/docker-desktop
 
+Sign up:\
 https://hub.docker.com/
 
-https://hyper.sh/
-
+Install and sign up:\
+https://hyper.sh/ \
 For Mac: `brew install hyper`
 
 #### Commands to run from directory with Dockerfile in it:
 
 Build the image with your DockerHub username:\
-`docker build . -t <YOUR_USERNAME>/contact-form`\
+`docker image build -t <YOUR_USERNAME>/contact-form .`\
 `-t` allows us to give the image our own name\
 `.` refers to where you want to create the image from
 
