@@ -61,6 +61,9 @@ Go to the given IP to see your live, hosted app!!!!
 #### In Beta:
 #### [For Certbot Domain SSL Certification](https://certbot.eff.org/lets-encrypt/ubuntubionic-apache)
 
+Possible solution here:\
+https://docs.hyper.sh/hyper/Feature/container/service.html
+
 List your running Hyper containers:\
 `hyper ps`
 
